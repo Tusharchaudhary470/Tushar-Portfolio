@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:ital,wght@0,400..800;1,400..800&family=Space+Grotesk:wght@500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Anton', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-grotesk: 'Space Grotesk', sans-serif;
+  --color-brand-red: #DC1428;
+  --color-brand-darkred: #B50E1F;
+  --color-brand-lightred: #FF3B4E;
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: #DC1428;
+  color: #111111;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #111111;
+  color: #FFFFFF;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #DC1428;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* ── Typography Utilities ── */
+.font-display {
+  font-family: 'Anton', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.font-grotesk {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* ── Floating Character Keyframes ── */
+@keyframes characterFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.character-float {
+  animation: characterFloat 6s ease-in-out infinite;
+}
+
+/* ── Subtle Pulse ── */
+@keyframes softPulse {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.4; }
+}
+
+.soft-pulse {
+  animation: softPulse 2.5s ease-in-out infinite;
+}
+
+/* ── Card Lift On Hover ── */
+.hover-lift {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.18);
+}
+
+/* ── Infinite Flowing Logo Marquee ── */
+@keyframes marqueeLeft {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marqueeRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marqueeLeft 28s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  animation: marqueeRight 28s linear infinite;
+  will-change: transform;
+}
+
+.marquee-pause:hover .animate-marquee-left,
+.marquee-pause:hover .animate-marquee-right {
+  animation-play-state: paused;
+}
+
+/* ── Hero Staggered Entrance Animations ── */
+@keyframes heroEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+
+.anim-hero-pill {
+  animation: heroEntrance 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+.anim-hero-text {
+  animation: heroEntrance 1.05s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+.anim-hero-character {
+  animation: heroEntrance 1.15s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both;
+}
+.anim-hero-sub {
+  animation: heroEntrance 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+}
+.anim-hero-actions {
+  animation: heroEntrance 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.75s both;
+}
+.anim-hero-social {
+  animation: heroEntrance 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.9s both;
+}
+
+
