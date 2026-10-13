@@ -24,32 +24,36 @@ export const SOCIAL_LINKS = {
 
 export const PROJECTS = [
   {
-    title: "ESP-Manager",
+    title: "Rosterly (ESP-Manager)",
     category: "Full-Stack Esports Team Platform",
     desc: "Full-stack management platform for esports organizations to track member rosters, wallet balances, tournament workflows, and leaderboards. Features secure JWT authentication, role-based authorization, and real-time transaction dashboards.",
-    tags: ["React", "Node.js", "Express.js", "MongoDB", "JWT", "REST APIs"],
+    tags: ["React 19", "Node.js", "Express 5", "MongoDB", "JWT", "Tailwind CSS v4"],
     github: "https://github.com/Tusharchaudhary470",
+    live: "https://esport-manager-azure.vercel.app",
   },
   {
     title: "Anime Discovery Platform",
     category: "React Web Application",
     desc: "Interactive content exploration application fetching dynamic titles from a public anime API. Features debounced search, custom reusable hooks, nested routing, and responsive state-driven discovery interfaces.",
     tags: ["React", "React Router", "Custom Hooks", "REST API", "Debounced Search"],
-    github: "https://github.com/Tusharchaudhary470",
+    github: "https://github.com/Tusharchaudhary470/Anime-search-app",
+    live: "https://anime-search-app-phi.vercel.app",
   },
   {
-    title: "Full-Stack Notes App",
-    category: "Productivity Web Application",
-    desc: "Complete notes management system with full CRUD operations, secure user authentication, category tagging, and persistent MongoDB storage accessed via structured REST API endpoints.",
-    tags: ["React", "Node.js", "Express.js", "MongoDB", "JWT", "bcrypt"],
-    github: "https://github.com/Tusharchaudhary470",
+    title: "Mini CRM & Lead Pipeline",
+    category: "Client Relationship Management",
+    desc: "Streamlined CRM platform for managing business contacts, lifecycle stages (Lead, Opportunity, Customer), and real-time search with local-storage synchronization.",
+    tags: ["React 19", "Vite", "Custom Hooks", "State Management", "Tailwind CSS"],
+    github: "https://github.com/Tusharchaudhary470/Crm-mini",
+    live: "https://crm-mini-pi.vercel.app",
   },
   {
     title: "Full-Stack Task & Todo App",
     category: "Task Management Application",
     desc: "State-driven task tracking tool with instant status toggles, task filtering, completion analytics, and persistent cloud synchronization backed by Node.js and MongoDB.",
-    tags: ["React", "Node.js", "Express.js", "MongoDB", "State Management"],
-    github: "https://github.com/Tusharchaudhary470",
+    tags: ["React", "Node.js", "Express", "MongoDB", "State Management"],
+    github: "https://github.com/Tusharchaudhary470/todo-fullstack-frontend",
+    live: "https://todo-fullstack-frontend-kohl.vercel.app",
   },
 ];
 

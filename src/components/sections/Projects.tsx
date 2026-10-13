@@ -7,6 +7,7 @@ import rosterlyTournaments from "../../assets/rosterly/rosterly-tournaments.png"
 import rosterlyStats from "../../assets/rosterly/rosterly-stats.png";
 import { 
   ArrowUpRight, 
+  ExternalLink,
   Layers, 
   ShieldCheck, 
   Sparkles, 
@@ -172,6 +173,7 @@ export function Projects() {
         }
       ],
       githubUrl: "https://github.com/Tusharchaudhary470",
+      liveUrl: "https://esport-manager-azure.vercel.app",
       image: rosterlyDashboard,
       featured: true,
     },
@@ -190,42 +192,45 @@ export function Projects() {
         "Optimized image loading and skeletal loading states for zero layout shift",
       ],
       tags: ["React", "React Router", "Custom Hooks", "API Integration", "Tailwind CSS"],
-      githubUrl: "https://github.com/Tusharchaudhary470",
+      githubUrl: "https://github.com/Tusharchaudhary470/Anime-search-app",
+      liveUrl: "https://anime-search-app-phi.vercel.app",
       featured: false,
     },
     {
-      id: "cloud-notes",
-      title: "Full-Stack Cloud Notes",
-      subtitle: "Secure Workspace & Note Management System",
+      id: "mini-crm",
+      title: "Mini CRM & Lead Pipeline",
+      subtitle: "Client Relationship & Contact Management",
       description:
-        "A full-stack notes workspace with end-to-end CRUD capabilities, user-isolated authentication, and persistent cloud database storage.",
+        "A streamlined CRM platform for managing business contacts, lead lifecycle stages (Lead, Contact, Opportunity, Customer), and real-time client search.",
       longDescription:
-        "Designed with a clean Notion-like minimal UI. Each user has protected note collections stored with MongoDB schemas, secured with JWT headers and REST endpoints.",
+        "Engineered with a responsive modular architecture: dynamic stage-based pipeline filtering, debounced contact search across names/emails/companies, custom local-storage synchronization hooks, and non-blocking toast notifications.",
       features: [
-        "Full Create, Read, Update, and Delete (CRUD) workflow via Express REST APIs",
-        "User authentication and encrypted credential storage with bcrypt",
-        "Search and tag-based filtering for instant note retrieval",
-        "Responsive UI supporting rich markdown notes on mobile and desktop",
+        "Dynamic lifecycle stage pipeline (Lead, Contact, Opportunity, Customer)",
+        "Search & filter engine across contact names, email addresses, and company tags",
+        "Persistent client-side state synchronization with custom storage hooks",
+        "Interactive CRUD modal workflows with validation and responsive toast alerts",
       ],
-      tags: ["React", "Node.js", "Express.js", "MongoDB", "bcrypt"],
-      githubUrl: "https://github.com/Tusharchaudhary470",
+      tags: ["React 19", "Vite", "Custom Hooks", "State Management", "Tailwind CSS"],
+      githubUrl: "https://github.com/Tusharchaudhary470/Crm-mini",
+      liveUrl: "https://crm-mini-pi.vercel.app",
       featured: false,
     },
     {
       id: "task-tracker",
-      title: "State-Driven Task Tracker",
-      subtitle: "Productivity & Workflow Execution Tool",
+      title: "Full-Stack Task Tracker",
+      subtitle: "State-Driven Productivity System",
       description:
         "A responsive task management application with real-time state updates, priority categorization, and database persistence.",
       longDescription:
-        "A project focused on bulletproof React state management and seamless REST API synchronization with MongoDB for tracking sprint workflows and daily developer tasks.",
+        "A full-stack application connecting a modern React client with an Express/MongoDB backend: optimistic state updates, task priority categorization, and persistent REST API synchronization.",
       features: [
         "Real-time state updates with optimistic UI updates for instant feedback",
         "Priority sorting, status categorization (Todo, In Progress, Completed)",
         "REST API integration with MongoDB for persistent data integrity across sessions",
       ],
-      tags: ["React", "Node.js", "MongoDB", "State Management", "REST APIs"],
-      githubUrl: "https://github.com/Tusharchaudhary470",
+      tags: ["React", "Node.js", "Express", "MongoDB", "REST APIs"],
+      githubUrl: "https://github.com/Tusharchaudhary470/todo-fullstack-frontend",
+      liveUrl: "https://todo-fullstack-frontend-kohl.vercel.app",
       featured: false,
     },
   ];
@@ -266,11 +271,20 @@ export function Projects() {
                     <span className="w-2 h-2 rounded-full bg-green-500/80" />
                   </div>
                   <span className="text-[10px] font-mono text-neutral-400 truncate">
-                    rosterly.app/dashboard
+                    esport-manager-azure.vercel.app
                   </span>
-                  <span className="text-[9px] text-emerald-400 font-semibold uppercase tracking-wider">
-                    ● Live UI
-                  </span>
+                  {featuredProject.liveUrl && (
+                    <a
+                      href={featuredProject.liveUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500/20 font-semibold uppercase tracking-wider transition-colors border border-emerald-500/30"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      Live App <ExternalLink className="w-2.5 h-2.5" />
+                    </a>
+                  )}
                 </div>
 
                 {/* Dashboard Image */}
@@ -339,14 +353,27 @@ export function Projects() {
                 </div>
               </div>
 
-              {/* Action Button */}
-              <div className="flex items-center gap-3 pt-2">
+              {/* Action Buttons */}
+              <div className="flex flex-wrap items-center gap-2.5 pt-2">
                 <button
                   type="button"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#DC1428] text-white font-bold text-xs sm:text-sm group-hover:bg-[#B50E1F] transition-all shadow-md"
                 >
                   Inspect Architecture & Screens <ArrowUpRight className="w-4 h-4" />
                 </button>
+                {featuredProject.liveUrl && (
+                  <a
+                    href={featuredProject.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-neutral-900 hover:bg-black text-white text-xs font-bold transition-all shadow-xs"
+                    title="Open Live Application"
+                  >
+                    <span>Live Demo</span>
+                    <ExternalLink className="w-3.5 h-3.5 text-emerald-400" />
+                  </a>
+                )}
                 <a
                   href={featuredProject.githubUrl}
                   target="_blank"
@@ -377,16 +404,31 @@ export function Projects() {
                   <span className="text-xs font-bold uppercase tracking-wider text-[#DC1428]">
                     {proj.subtitle}
                   </span>
-                  <a
-                    href={proj.githubUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="p-2 rounded-full bg-neutral-100 text-black hover:bg-neutral-200 transition-colors"
-                    aria-label="GitHub link"
-                  >
-                    <GithubIcon className="w-4 h-4" />
-                  </a>
+                  <div className="flex items-center gap-1.5">
+                    {proj.liveUrl && (
+                      <a
+                        href={proj.liveUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-700 text-[11px] font-bold border border-emerald-200 transition-colors shadow-2xs"
+                        title="Live Demo"
+                      >
+                        <span>Live Demo</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    )}
+                    <a
+                      href={proj.githubUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="p-2 rounded-full bg-neutral-100 text-black hover:bg-neutral-200 transition-colors"
+                      aria-label="GitHub link"
+                    >
+                      <GithubIcon className="w-4 h-4" />
+                    </a>
+                  </div>
                 </div>
 
                 <h4 className="text-2xl font-bold text-black tracking-tight mb-2.5 group-hover:text-[#DC1428] transition-colors">
@@ -448,9 +490,22 @@ export function Projects() {
                 </div>
               )}
               <div>
-                <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#DC1428]/10 text-[#DC1428] text-xs font-bold uppercase tracking-wider">
-                  <ShieldCheck className="w-3.5 h-3.5" />
-                  Engineering Deep Dive
+                <div className="flex flex-wrap items-center gap-2">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#DC1428]/10 text-[#DC1428] text-xs font-bold uppercase tracking-wider">
+                    <ShieldCheck className="w-3.5 h-3.5" />
+                    Engineering Deep Dive
+                  </div>
+                  {selectedProject.liveUrl && (
+                    <a
+                      href={selectedProject.liveUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-700 text-xs font-bold tracking-wider border border-emerald-200 transition-colors shadow-2xs"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                      Live Demo ↗
+                    </a>
+                  )}
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-black tracking-tight mt-1">
                   {selectedProject.title}
@@ -609,11 +664,21 @@ export function Projects() {
             )}
 
             {/* Modal Actions */}
-            <div className="flex items-center justify-between gap-3 pt-4 border-t border-neutral-200">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-4 border-t border-neutral-200">
               <span className="text-xs text-neutral-500 font-medium">
                 Verified full-stack architecture
               </span>
-              <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center gap-2.5">
+                {selectedProject.liveUrl && (
+                  <a
+                    href={selectedProject.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#DC1428] text-white text-xs font-bold hover:bg-[#B50E1F] transition-all shadow-md"
+                  >
+                    <ExternalLink className="w-4 h-4" /> Live Application
+                  </a>
+                )}
                 <a
                   href={selectedProject.githubUrl}
                   target="_blank"
